@@ -1,4 +1,4 @@
-fetch('http://127.0.0.1:5500/data.json')
+fetch('https://ridwan10000.github.io/Time_tracking_dashboard_main/data.json')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
