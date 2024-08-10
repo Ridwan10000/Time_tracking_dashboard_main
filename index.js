@@ -8,7 +8,12 @@ fetch('https://ridwan10000.github.io/Time_tracking_dashboard_main/data.json')
   .then(data => {
     let dailyButton = document.getElementById('daily');                   
     let weeklyButton = document.getElementById('weekly');                   
-    let monthlyButton = document.getElementById('monthly');    
+    let monthlyButton = document.getElementById('monthly');
+    dailyButton.classList.add('active');
+    for(let i = 0 ; i < 6; i++){
+      document.getElementsByClassName('current')[i].innerText = data[i].timeframes.daily.current + 'hrs';
+      document.getElementsByClassName('previous')[i].innerText ='yesetrday ' + data[i].timeframes.daily.previous +' hrs';
+    }
     dailyButton.addEventListener('click',()=>{
       dailyButton.classList.add('active');
       weeklyButton.classList.remove('active');
